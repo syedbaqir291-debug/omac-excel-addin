@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>OMAC Data Analyzer — Excel Add-in</title>
+<style>
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f4ff;color:#1a2540;margin:0;padding:0;}
+.hero{background:linear-gradient(135deg,#2563eb,#7c3aed);padding:60px 40px;text-align:center;color:#fff;}
+.hero h1{font-size:32px;font-weight:800;margin-bottom:8px;}
+.hero p{font-size:16px;opacity:.85;margin-bottom:0;}
+.badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:20px;padding:4px 16px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:20px;}
+.content{max-width:800px;margin:40px auto;padding:0 24px;}
+.card{background:#fff;border:1px solid #d0d8ee;border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(37,99,235,.07);}
+.card h2{font-size:18px;font-weight:700;color:#1a2540;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;}
+.step-num{width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step p{margin:0;font-size:14px;line-height:1.6;color:#1a2540;}
+.step code{background:#eef1f8;border:1px solid #d0d8ee;border-radius:5px;padding:1px 7px;font-family:monospace;font-size:12px;color:#2563eb;}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#2563eb;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;margin-top:8px;}
+.btn:hover{opacity:.88;}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.feat{background:#f4f6fb;border-radius:10px;padding:14px 16px;}
+.feat h3{font-size:13px;font-weight:700;color:#2563eb;margin-bottom:4px;}
+.feat p{font-size:12px;color:#5a6a8a;margin:0;}
+.footer{text-align:center;padding:24px;font-size:11px;color:#8898b8;font-family:monospace;border-top:1px solid #d0d8ee;margin-top:20px;}
+@media(max-width:600px){.features{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="badge">OMAC DEVELOPERS · S M BAQIR</div>
+  <h1>OMAC Universal Data Analyzer</h1>
+  <p>Professional Excel Add-in for Data Analysis &amp; Compliance Dashboards</p>
+</div>
+<div class="content">
+
+  <div class="card">
+    <h2>⚡ Install in Excel (Direct Method — Recommended)</h2>
+    <div class="step"><div class="step-num">1</div><p>Download <code>manifest.xml</code> from this repository</p></div>
+    <div class="step"><div class="step-num">2</div><p>Open <strong>Excel Desktop</strong> → click <strong>Insert</strong> tab</p></div>
+    <div class="step"><div class="step-num">3</div><p>Click <strong>Get Add-ins</strong> → click <strong>"Upload My Add-in"</strong> (bottom of dialog)</p></div>
+    <div class="step"><div class="step-num">4</div><p>Browse to the downloaded <code>manifest.xml</code> → click <strong>Upload</strong></p></div>
+    <div class="step"><div class="step-num">5</div><p>An <strong>"OMAC Analyzer"</strong> button appears immediately in your <strong>Home</strong> ribbon — click it to open the panel</p></div>
+    <a href="manifest.xml" class="btn">⬇️ Download manifest.xml</a>
+  </div>
+
+  <div class="card">
+    <h2>📊 Features</h2>
+    <div class="features">
+      <div class="feat"><h3>📊 Data Analyzer</h3><p>Reads any sheet directly. X/Y pivot, multiple charts, slicers, sort, time formats.</p></div>
+      <div class="feat"><h3>✅ Compliance Module</h3><p>Hand hygiene, audit compliance with speedometer, Met/Partial/Not Met criteria.</p></div>
+      <div class="feat"><h3>🎨 Interactive Charts</h3><p>Multiple charts side by side, colour pickers, resize width/height per chart.</p></div>
+      <div class="feat"><h3>📥 Write to Excel</h3><p>Paste the statistics table back as a new sheet in your workbook.</p></div>
+      <div class="feat"><h3>⬇️ Export HTML</h3><p>Download a standalone shareable dashboard — works offline, no login.</p></div>
+      <div class="feat"><h3>🌙 Light &amp; Dark theme</h3><p>Toggle between light and dark mode with proper contrast.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔧 Troubleshooting</h2>
+    <div class="step"><div class="step-num">!</div><p><strong>Trust Center method not working?</strong> Use the direct Upload method above — it always works.</p></div>
+    <div class="step"><div class="step-num">!</div><p><strong>Add-in not loading?</strong> Make sure GitHub Pages is enabled (Settings → Pages → main branch → Save). Wait 2-3 minutes for it to deploy.</p></div>
+    <div class="step"><div class="step-num">!</div><p><strong>Charts not showing?</strong> Excel needs internet access to load Plotly. Try on a machine with internet.</p></div>
+  </div>
+
+</div>
+<div class="footer">OMAC DEVELOPERS · S M BAQIR · Universal Data Analyzer</div>
+</body>
+</html>
