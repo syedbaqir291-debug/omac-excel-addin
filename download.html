@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Download OMAC Analyzer</title>
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#f0f4ff;color:#1a2540;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;}
+.box{background:#fff;border-radius:16px;padding:40px;max-width:480px;width:90%;text-align:center;box-shadow:0 4px 24px rgba(37,99,235,.12);border:1px solid #d0d8ee;}
+.logo{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#fff;margin:0 auto 16px;}
+h1{font-size:22px;font-weight:800;margin-bottom:6px;}
+p{font-size:13px;color:#5a6a8a;margin-bottom:24px;line-height:1.6;}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#2563eb;color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:none;width:100%;justify-content:center;box-sizing:border-box;}
+.btn:hover{background:#1d4ed8;}
+.steps{text-align:left;background:#f4f6fb;border-radius:10px;padding:16px 20px;margin-top:20px;}
+.steps h3{font-size:12px;font-weight:800;color:#5a6a8a;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.step{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:12px;color:#1a2540;}
+.sn{width:20px;height:20px;border-radius:50%;background:#2563eb;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.footer{margin-top:20px;font-size:10px;color:#8898b8;font-family:monospace;}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="logo">OA</div>
+  <h1>OMAC Data Analyzer</h1>
+  <p>Professional Excel Add-in for Data Analysis &amp; Compliance Dashboards<br><strong>By S M Baqir · OMAC Developers</strong></p>
+
+  <a class="btn" onclick="downloadManifest()">⬇️ Download &amp; Install Add-in</a>
+
+  <div class="steps">
+    <h3>After downloading:</h3>
+    <div class="step"><div class="sn">1</div><span>Open <strong>Excel Desktop</strong></span></div>
+    <div class="step"><div class="sn">2</div><span>Click <strong>Insert</strong> → <strong>Get Add-ins</strong></span></div>
+    <div class="step"><div class="sn">3</div><span>Click <strong>"Upload My Add-in"</strong> at the bottom</span></div>
+    <div class="step"><div class="sn">4</div><span>Select the downloaded <strong>manifest.xml</strong> → Upload</span></div>
+    <div class="step"><div class="sn">5</div><span><strong>OMAC Analyzer</strong> button appears in Home ribbon ✓</span></div>
+  </div>
+
+  <div class="footer">OMAC DEVELOPERS · S M BAQIR</div>
+</div>
+
+<script>
+function downloadManifest(){
+  // Fetch manifest.xml and force download
+  fetch('manifest.xml')
+    .then(r=>r.blob())
+    .then(blob=>{
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement('a');
+      a.href=url;
+      a.download='OMAC_Analyzer_manifest.xml';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+}
+</script>
+</body>
+</html>
